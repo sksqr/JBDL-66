@@ -18,5 +18,3 @@ public class MmtDemo {
         System.out.println(response);
     }
 }
-//indhu_13812
-//shivam_singhhh321
