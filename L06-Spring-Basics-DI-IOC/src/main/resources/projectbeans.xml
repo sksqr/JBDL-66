@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+    <bean id="engine1" class="com.gfg.Engine" >
+        <property name="name" value="new engine"></property>
+        <property name="cc" value="1600"></property>
+    </bean>
+
+    <bean id="engine2" class="com.gfg.Engine" scope="prototype">
+        <constructor-arg index="0" value="torq engine"/>
+        <constructor-arg index="1" value="1200"/>
+    </bean>
+
+
+    <bean id="engine3" class="com.gfg.Engine" init-method="engineInit" destroy-method="engineDestroy">
+        <property name="name" value="power-engine"></property>
+        <property name="cc" value="1200"></property>
+    </bean>
+
+    <bean id="car1" class="com.gfg.Car">
+        <property name="name" value="Hexa"></property>
+        <property name="engine" ref="engine2"></property>
+    </bean>
+</beans>
