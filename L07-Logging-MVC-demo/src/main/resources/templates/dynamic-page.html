@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+Server time is <span th:text="${serverTime}" />
+<h2>Product List</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+    </tr>
+    <tr th:each="product: ${products}">
+        <td th:text="${product.id}" />
+        <td th:text="${product.name}" />
+    </tr>
+</table>
+</body>
+</html>
+
