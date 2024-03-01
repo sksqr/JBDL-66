@@ -1,11 +1,13 @@
 package com.example.L10minorproject.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.OffsetDateTime;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -16,5 +18,18 @@ public class Flat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String flatNo;
+    @Column(unique = true)
+    private String number;
+
+    @OneToMany(mappedBy = "flat")
+    private Set<User> users;
+
+
+    @CreatedDate
+    @Column(nullable = false, updatable = false)
+    private OffsetDateTime createdDate;
+
+    @LastModifiedDate
+    @Column(nullable = false)
+    private OffsetDateTime updatedDate;
 }

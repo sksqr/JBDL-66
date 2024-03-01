@@ -1,12 +1,13 @@
 package com.example.L10minorproject.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.OffsetDateTime;
 
 @Getter
 @Setter
@@ -27,4 +28,12 @@ public class Address {
     private String pincode;
 
     private String country;
+
+    @CreatedDate
+    @Column(nullable = false, updatable = false)
+    private OffsetDateTime createdDate;
+
+    @LastModifiedDate
+    @Column(nullable = false)
+    private OffsetDateTime updatedDate;
 }
