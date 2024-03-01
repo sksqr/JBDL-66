@@ -4,6 +4,8 @@ import com.example.L10minorproject.enums.VisitStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.stereotype.Component;
@@ -50,13 +52,11 @@ public class Visit {
     private User approvedBy;
 
 
-    @CreatedDate
-    @Column(nullable = false, updatable = false)
-    private OffsetDateTime createdDate;
+    @CreationTimestamp
+    private Date createdDate;
 
-    @LastModifiedDate
-    @Column(nullable = false)
-    private OffsetDateTime updatedDate;
+    @UpdateTimestamp
+    private Date updatedDate;
 
 
 }
