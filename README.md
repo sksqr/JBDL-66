@@ -23,6 +23,11 @@ https://spring.io/guides/tutorials/spring-boot-oauth2/ </br>
 
 Kafka </br>
 https://kafka.apache.org/downloads </br>
-https://kafka.apache.org/quickstart
+https://kafka.apache.org/quickstart </br>
 
+Feign Client </br>
+https://cloud.spring.io/spring-cloud-static/spring-cloud-openfeign/2.2.0.RC2/reference/html/ </br>
+
+Spring Cloud Circuit Breaker </br>
+https://spring.io/projects/spring-cloud-circuitbreaker
 
