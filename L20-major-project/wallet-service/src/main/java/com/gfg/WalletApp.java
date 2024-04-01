@@ -10,6 +10,10 @@ import org.springframework.web.client.RestTemplate;
 public class WalletApp {
 
     @Bean
+    public RequestFilter requestFilter(){
+        return new RequestFilter();
+    }
+    @Bean
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }
